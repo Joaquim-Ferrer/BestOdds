@@ -1,6 +1,6 @@
 Template.filter.helpers({
 	options: function(){
-		return ["World","Portugal", "USA"];
+		return ["World","Portugal", "USA", "Germany", "UK", "Italy"];
 	},
 	selection: function() {
 		filter = Session.get("filter");
@@ -9,29 +9,6 @@ Template.filter.helpers({
 		return filter["country"]["$in"];
 	}
 })
-
-/*
-Template.filter.events({
-	"change .add_filter": function(event) {
-		var country_added = event.target.value;
-		filter = {};
-		if(country_added === "World") {
-			filter["country"] = {"$in": ["World","Portugal", "USA"]};
-			Session.set("filter", filter);
-		}
-		else {
-			filter["country"] = {"$in": [country_added]};
-			Session.set("filter", filter);
-		}
-	},
-	"click ul li": function(event) {
-		filter = Session.get("filter");
-		index = filter["country"].indexOf(event.target.value);
-		if(index > -1) {
-			filter["country"].splice(index, 1);
-		}
-	}
-});*/
 
 Template.filter.events({
 	"change .add_filter": function(event) {

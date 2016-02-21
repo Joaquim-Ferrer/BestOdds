@@ -2,17 +2,14 @@ import pymongo
 import web_scrape_lottery as scrape
 
 def server_connection():
-	
-	
-	print(client.database_names())
+	client = pymongo.MongoClient('localhost', 3001)
 	return client
+	
 
 def update_db():
-	client = pymongo.MongoClient('localhost', 3001)
-	db = client.meteor
 	
-	for d in db.lotteryDraws.find():
-		print(d)
+	client = server_connection()
+	db = client.meteor
 
 	out = scrape.getAllResults(scrape.games)
 
