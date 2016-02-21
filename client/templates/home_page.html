@@ -10,12 +10,15 @@
 	</header>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-11 col-sm-8">
-				<div class = "recent_drawings verticalLine">
+			<div class="col-xs-12 col-sm-8">
+				<div class="recent_drawings verticalLine">
 					{{#each recentDrawings}}
 						{{> drawingPresentation}}
 					{{/each}}
-					</div>
+				</div>
+			<div class="col-xs-12 col-sm-8">
+				{{>filter}}
+			</div>	
 			</div>
 		</div>
 	</div>
