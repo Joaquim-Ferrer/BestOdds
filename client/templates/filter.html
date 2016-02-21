@@ -1,8 +1,10 @@
 <template name = "filter">
-	<h3> Filter </h3><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Hide</button>
-	<form class="add_filter">
-		{{#each options}}
-			<input type="checkbox" value="{{this}}" checked = True>{{this}}<br>
-		{{/each}}
-	</form>
+	<div class="inlineBlock"><button type="button" class="btn btn-info" data-toggle="collapse" data-target="#filter">Filters</button></div>
+	<div id="filter" class="collapse">
+		<form class="add_filter">
+			{{#each options}}
+				<input type="checkbox" value="{{this}}" checked = True>{{this}}<br>
+			{{/each}}
+		</form>
+	</div>
 </template>
