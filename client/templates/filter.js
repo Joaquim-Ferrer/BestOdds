@@ -16,7 +16,7 @@ Template.filter.events({
 		filter = Session.get("filter");
 		
 		if(country_added === "World") {
-				filter["country"] = {"$in": ["World","Portugal", "USA"]};
+				filter["country"] = {"$in": ["Portugal", "USA", "Germany", "UK", "Italy"]};
 				Session.set("filter", filter);
 				return;
 		}
