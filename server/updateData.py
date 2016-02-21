@@ -17,11 +17,10 @@ def update_db():
 	for d in out:
 		prize = out[d]["prize"]
 
-		if (re.search("TBC", prize, flags=re.IGNORECASE) != None):
-			
-			out[d]["prize"] = "€3,000,000"
-		db.lotteryDraws.remove({"game": d})
-		db.lotteryDraws.insert(out[d])
+		if (re.search("TBC", prize, flags=re.IGNORECASE) == None):
+			db.lotteryDraws.remove({"game": d})
+			db.lotteryDraws.insert(out[d])
+		
 update_db()
 
 
