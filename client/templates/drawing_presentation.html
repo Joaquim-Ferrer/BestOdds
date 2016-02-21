@@ -3,5 +3,18 @@
 	<h2>{{normalNumbers }}</h2>
 	<h5>Game:{{game}}</h5>
 	<h5>Prize:{{prize}}</h5>
-	<h2>The prize is {{prize}}</h2>
+	<h5>Date:{{date}}</h5>
+
+	{{#if has_next_prize}}
+		<h5>Next prize: {{next_prize}}</h5>
+	{{/if}}
+	{{#if has_rolover}}
+		<h5>Rollover: {{next_rollover}}</h5>
+	{{/if}}
+	{{#if winner}}
+		<h4> There was a winner! Check your ticket!</h4>
+		{{else}}
+		<h4>There was no winner this time.</h4>
+	{{/if}}
+
 </template>
