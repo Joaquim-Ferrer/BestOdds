@@ -5,5 +5,5 @@ sched = BackgroundScheduler()
 def print_ln():
 	update_db()
 
-sched.add_job(print_ln, 'interval', seconds=3)
+sched.add_job(print_ln, 'interval', hours=2)
 sched.start()

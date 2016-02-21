@@ -2,8 +2,8 @@ from apscheduler.schedulers.background import BackgroundScheduler, BlockingSched
 from updateData import update_db
 
 sched = BackgroundScheduler()
-def print_ln():
+def update():
 	update_db()
 
-sched.add_job(print_ln, 'interval', seconds=3)
+sched.add_job(update, 'interval', hours=2)
 sched.start()
