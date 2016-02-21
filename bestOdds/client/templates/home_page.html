@@ -1,3 +1,7 @@
 <template name = "homePage">
-	<h1> Mesquita és um rabo </h1>
+	<div class = "recent_drawings">
+		{{#each recentDrawings}}
+			{{> drawingPresentation}}
+		{{/each}}
+	</div>
 </template>

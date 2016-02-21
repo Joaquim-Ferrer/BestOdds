@@ -131,5 +131,3 @@ def getAllResults(games):
 
 	return out
 
-out = getAllResults(games)
-print(out)

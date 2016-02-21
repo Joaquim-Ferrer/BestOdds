@@ -1,0 +1,15 @@
+<template name = "filter">
+	<h3> Filter </h3>
+	<form class="add_filter">
+		<select name = "country" >
+			{{#each options}}
+				<option value="{{this}}">{{this}}</option>
+			{{/each}}
+		</select>
+	</form>
+	<ul>
+	{{#each selection}}
+		<li ><h5 class="tag">{{this}}</h5></li>
+	{{/each}}
+	</ul>
+</template>
