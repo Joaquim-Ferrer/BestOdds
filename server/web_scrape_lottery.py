@@ -7,16 +7,16 @@ import calendar
 root_url = "http://www.lotto.net/"
 games = {
 			"euromillions": {	
-				"game": "euromillions",
+				"game": "EuroMillions",
 				"url": ["http://www.lotto.net/euromillions/results", 
 						"http://www.freelotto.com/lottery_results/UK_United_Kingdom_Lottery_Results.html"],
 				"order": 0,
 				"n_normal_balls": 5, 
 				"n_special_balls": 2,
-				"country": ['Portugal', 'UK', 'Italy'] 
+				"country": ['Portugal', 'UK', 'France', 'Belgium'] 
 			},
 			"powerball": {	
-				"game": "powerball",
+				"game": "Powerball",
 			    "url": ["http://www.lotto.net/powerball/numbers", 
 			    		"http://www.freelotto.com/lottery_results/MI_Michigan_Lottery_Results.html"],
 			    "order": 0,
@@ -25,7 +25,7 @@ games = {
 			    "country": ['USA']
 			},
 			"german_lotto": {	
-				"game": "german_lotto",
+				"game": "German Lotto",
 			    "url": ["http://www.lotto.net/german-lotto/results", 
 			    		"http://www.magayo.com/lotto/germany/german-lotto-6-aus-49-results/"],
 			    "order": -1,
@@ -34,7 +34,7 @@ games = {
 			    "country": ['Germany']
 			},
 			"uk_lotto": {	
-				"game": "uk_lotto",
+				"game": "UK Lotto",
 			    "url": ["http://www.lotto.net/uk-lotto/results", 
 			    		"http://www.freelotto.com/lottery_results/UK_United_Kingdom_Lottery_Results.html",
 			    		"http://www.magayo.com/lotto/uk/lotto-results/"],

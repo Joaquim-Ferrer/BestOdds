@@ -1,7 +1,27 @@
 <template name="drawingPresentation">
-	<h2>{{specialNumbers}}</h2>
-	<h2>{{normalNumbers }}</h2>
-	<h5>Game:{{game}}</h5>
-	<h5>Prize:{{prize}}</h5>
-	<h2>The prize is {{prize}}</h2>
+	<div class="row">
+		<div class="title"><h2>{{game}}</h2></div>
+		<div class="col-xs-12 col-sm-8">
+			<div class="verticalLine">
+				<div class="row">
+					<p>{{weekday}}, {{display_date}}</p>
+					<div class="col-xs-12 col-sm-8">
+						{{#each normal_balls}}
+							<div class="numberCircle inlineBlock">{{normal_ball}}</div>
+						{{/each}}
+					</div>		
+					<div class="col-xs-12 col-sm-4">
+						{{#each special_balls}}
+							<div class="numberCircleSpecial inlineBlock">{{special_ball}}</div>
+						{{/each}}
+					</div>
+				</div>
+				<h2>{{prize}}</h2>
+			</div>
+		</div>
+		<div class="col-xs-12 col-sm-4">
+			{{next_date}}
+			<p>{{next_prize}}</p>
+		</div>
+	</div>
 </template>
