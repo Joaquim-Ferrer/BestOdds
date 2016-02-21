@@ -18,6 +18,7 @@ def update_db():
 		prize = out[d]["prize"]
 
 		if (re.search("TBC", prize, flags=re.IGNORECASE) == None):
+			
 			db.lotteryDraws.remove({"game": d})
 			db.lotteryDraws.insert(out[d])
 		

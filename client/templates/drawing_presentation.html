@@ -22,14 +22,18 @@
 		<div class="col-xs-12 col-sm-4">
 			<div>
 			<p><h3>Next Draw</h3></p>
-				{{#if has_next_prize}}
+				{{#if has_next_date}}
 					 Date: {{next_date}}
+				{{else}}
+					<p>Date: To be announced</p>
+				{{/if}}
+				{{#if has_next_prize}}
 					<p>Prize: {{next_prize}}</p>
 					{{#if has_next_rollover}}
 						<p>Roll Over: {{next_rollover}}</p>
 					{{/if}}
 				{{else}}
-					<p>To be announced</p>
+					<p>Prize: To be announced</p>
 				{{/if}}
 			</div>
 		</div>

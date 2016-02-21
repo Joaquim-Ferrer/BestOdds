@@ -14,6 +14,9 @@ Template.drawingPresentation.helpers({
 	has_next_prize: function() {
 		return this.next_prize != "";
 	},
+	has_next_date: function(){
+		return this.next_date != "";
+	},
 	has_next_rollover: function(){
 		return this.next_rollover > 0
 	},
