@@ -1,7 +1,31 @@
 <template name = "homePage">
-	<div class = "recent_drawings">
-		{{#each recentDrawings}}
-			{{> drawingPresentation}}
-		{{/each}}
+	<header class="jumbotron">
+		<div class="container">
+			<div class="row row-header">
+				<div class="col-xs-12 horizontal_align vertical_align">
+					<h2>Lottery Mania</h2>
+				</div>	
+			</div>	
+		</div>
+	</header>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8">
+				<div class="recent_drawings verticalLine">
+					{{#each recentDrawings}}
+						<div class="row row-content">
+							<div class="col-xs-12">
+								<div class="horizontal_align">{{> drawingPresentation}}</div>
+							</div>
+							<div class="col-xs-12 col-sm-4"></div>
+						</div>
+					{{/each}}
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-4">
+				{{>filter}}
+			</div>	
+		</div>
 	</div>
+	
 </template>
