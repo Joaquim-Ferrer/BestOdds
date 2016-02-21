@@ -19,5 +19,8 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 insecure                # Allow all DB writes from clients (for prototyping)
 iron:router
 twbs:bootstrap
+<<<<<<< HEAD
 mdg:geolocation
+=======
 fortawesome:fontawesome
+>>>>>>> e5975cc9981447a3d9e43bea7a77ff01a42c47be

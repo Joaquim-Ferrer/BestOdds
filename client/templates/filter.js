@@ -1,7 +1,6 @@
 Template.filter.helpers({
 	options: function(){
-		//ALL MUST BE THE FIRST ONE BECAUSE THE FIRST gETS DESELECTED WHEN OTHER GETS SELECTED
-		return ["All","Portugal", "USA", "Germany", "UK", "Italy"];
+		return ["All", "Australia", "Brazil", "Canada", "Germany", "Portugal", "UK", "USA"];
 	},
 	selection: function() {
 		filter = Session.get("filter");

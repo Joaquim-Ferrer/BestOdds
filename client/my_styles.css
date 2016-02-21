@@ -2,14 +2,21 @@
     margin:0px auto;
     padding:0px auto;
 }
-
+.jumbotron{
+	background-color: #69A583;
+}
 .row-content {
     margin:0px auto;
-    padding: 50px 0px 50px 0px;
+    padding: 40px 0px 50px 0px;
     border-bottom: 1px ridge;
     min-height:150px;
 }
-
+.inlineBlock{
+	display: inline-block;;
+}
+.title{
+	padding-bottom: 20px;
+}
 .horizontal_align{
 	text-align: center;
 }
@@ -23,6 +30,43 @@
 	height: 170px;
 }
 
-.verticalLine {
-    border-right: 1px ridge;
+@media (min-width: 767px) { 
+    .verticalLine {
+    	border-right: 1px ridge;
+	}
+}
+
+@media (max-width: 767px) { 
+    .upLine {
+    	border-top: 1px ridge;
+	}
+}
+
+.numberCircle {
+    border-radius: 50%;
+
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+
+    background: #fff;
+    border: 2px solid #666;
+    color: #666;
+    text-align: center;
+
+    font: 32px Arial, sans-serif;
+}
+.numberCircleSpecial {
+    border-radius: 50%;
+
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+
+    background: #fff;
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    text-align: center;
+
+    font: 32px Arial, sans-serif;
 }

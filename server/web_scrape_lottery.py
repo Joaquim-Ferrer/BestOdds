@@ -6,17 +6,17 @@ import calendar
 
 root_url = "http://www.lotto.net/"
 games = {
-			"euromillions": {	
-				"game": "euromillions",
+			"Europe EuroMillions": {	
+				"game": "Europe EuroMillions",
 				"url": ["http://www.lotto.net/euromillions/results", 
 						"http://www.freelotto.com/lottery_results/UK_United_Kingdom_Lottery_Results.html"],
 				"order": 0,
 				"n_normal_balls": 5, 
 				"n_special_balls": 2,
-				"country": ['Portugal', 'UK', 'Italy'] 
+				"country": ['Portugal', 'UK', 'France', 'Belgium'] 
 			},
-			"powerball": {	
-				"game": "powerball",
+			"Powerball (USA)": {	
+				"game": "Powerball (USA)",
 			    "url": ["http://www.lotto.net/powerball/numbers", 
 			    		"http://www.freelotto.com/lottery_results/MI_Michigan_Lottery_Results.html"],
 			    "order": 0,
@@ -24,8 +24,8 @@ games = {
 			    "n_special_balls": 2,
 			    "country": ['USA']
 			},
-			"german_lotto": {	
-				"game": "german_lotto",
+			"German Lotto": {	
+				"game": "German Lotto",
 			    "url": ["http://www.lotto.net/german-lotto/results", 
 			    		"http://www.magayo.com/lotto/germany/german-lotto-6-aus-49-results/"],
 			    "order": -1,
@@ -33,8 +33,8 @@ games = {
 			    "n_special_balls": 1,
 			    "country": ['Germany']
 			},
-			"uk_lotto": {	
-				"game": "uk_lotto",
+			"UK Lotto": {	
+				"game": "UK Lotto",
 			    "url": ["http://www.lotto.net/uk-lotto/results", 
 			    		"http://www.freelotto.com/lottery_results/UK_United_Kingdom_Lottery_Results.html",
 			    		"http://www.magayo.com/lotto/uk/lotto-results/"],
@@ -42,9 +42,36 @@ games = {
 			    "n_normal_balls": 6,
 			    "n_special_balls": 1,
 			    "country": ['UK']
+			},
+			"Powerball (Australia)": {	
+				"game": "Powerball (Australia)",
+			    "url": ["http://www.lotto.net/australia-powerball/results", 
+			    		"http://pt.freelotto.com/lottery_results/au_Australia_Lottery_Results.html"],
+			    "order": 3,
+			    "n_normal_balls": 6,
+			    "n_special_balls": 1,
+			    "country": ['Australia']
+			},
+			"Mega Sena (Brazil)": {	
+				"game": "Mega Sena (Brazil)",
+			    "url": ["http://www.lotto.net/mega-sena/results", 
+			    		"http://pt.freelotto.com/lottery_results/br_Brazil_Lottery_Results.html"],
+			    "order": 3,
+			    "n_normal_balls": 6,
+			    "n_special_balls": 0,
+			    "country": ['Brazil']
+			},
+			"Canada Lotto Max": {	
+				"game": "Canada Lotto Max",
+			    "url": ["http://www.lotto.net/canada-lotto-max/numbers", 
+			    		"http://pt.freelotto.com/lottery_results/WC_Alberta_Lottery_Results.html"],
+			    "order": 3,
+			    "n_normal_balls": 7,
+			    "n_special_balls": 1,
+			    "country": ['Canada']
 			}
 		}
-
+		
 def parse_date(date):
 	day, s_month, year = date.split()
 
@@ -76,7 +103,10 @@ def getGameResult(game):
 	if order != -1:
 		try:
 			next_date = next_tree.xpath("//span[@class='drawdate']//b/text()")[order]
-			next_prize = next_tree.xpath("//span[@class='jackpot']//b/text()")[order]
+			try:
+				next_prize = next_tree.xpath("//span[@class='jackpot']//b/text()")[order]
+			except:
+				next_prize = ""
 		except:
 			page = requests.get(game["url"][2])
 			backup_tree = html.fromstring(page.content)
