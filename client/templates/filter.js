@@ -1,6 +1,6 @@
 Template.filter.helpers({
 	options: function(){
-		return ["Portugal", "USA", "Germany", "UK", "Italy"];
+		return ["All","Portugal", "USA", "Germany", "UK", "Italy"];
 	},
 	selection: function() {
 		filter = Session.get("filter");
@@ -15,9 +15,16 @@ Template.filter.events({
 		var country_added = event.target.value;
 		filter = Session.get("filter");
 		console.log(event);
-		/*if(country_added === "All" && event.target.checked) {
-			fo
-		}*/
+		if(country_added === "All" && event.target.checked) {
+			countries_added = []
+			for(i=0; i < event.currentTarget.length; i++) {
+				event.currentTarget[i]["checked"] = true;
+				countries_added.push(event.currentTarget[i].value);
+			}
+			filter["country"] = {"$in": countries_added};
+			Session.set("filter", filter);
+			return
+		}
 		if(filter["country"]) {
 			countries_in_filter = filter["country"]["$in"]
 			if(event.target.checked) {
