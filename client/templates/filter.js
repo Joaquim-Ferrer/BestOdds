@@ -35,19 +35,12 @@ Template.filter.events({
 				index = filter["country"]["$in"].indexOf(event.target.value);
 				if(index > -1) {
 					filter["country"]["$in"].splice(index, 1);
+					event.currentTarget["0"]["checked"] = false;
 				}
 			}
 		}
 		else {
 			filter["country"] = { "$in": country_added } 
-		}
-		Session.set("filter", filter);
-	},
-	"click .tag": function(event) {
-		filter = Session.get("filter");
-		index = filter["country"]["$in"].indexOf(event.target.textContent);
-		if(index > -1) {
-			 filter["country"]["$in"].splice(index, 1);
 		}
 		Session.set("filter", filter);
 	}
