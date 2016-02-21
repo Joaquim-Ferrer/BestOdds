@@ -2,7 +2,9 @@
     margin:0px auto;
     padding:0px auto;
 }
-
+.jumbotron{
+	background-color: #69A583;
+}
 .row-content {
     margin:0px auto;
     padding: 40px 0px 50px 0px;
