@@ -10,7 +10,10 @@
 	</header>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-sm-8">
+			<div class="col-xs-12 col-sm-4 col-sm-push-8">
+				{{>filter}}
+			</div>	
+			<div class="col-xs-12 col-sm-8 col-sm-pull-4">
 				<div class="recent_drawings verticalLine">
 					{{#each recentDrawings}}
 						<div class="row row-content">
@@ -22,9 +25,6 @@
 					{{/each}}
 				</div>
 			</div>
-			<div class="col-xs-12 col-sm-4">
-				{{>filter}}
-			</div>	
 		</div>
 	</div>
 	

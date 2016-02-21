@@ -1,6 +1,6 @@
 Template.filter.helpers({
 	options: function(){
-		return ["All","Portugal", "USA", "Germany", "UK", "Italy"];
+		return ["All", "Germany", "Portugal", "UK", "USA"];
 	},
 	selection: function() {
 		filter = Session.get("filter");

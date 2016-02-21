@@ -28,9 +28,18 @@
 	height: 170px;
 }
 
-.verticalLine {
-    border-right: 1px ridge;
+@media (min-width: 767px) { 
+    .verticalLine {
+    	border-right: 1px ridge;
+	}
 }
+
+@media (max-width: 767px) { 
+    .upLine {
+    	border-top: 1px ridge;
+	}
+}
+
 .numberCircle {
     border-radius: 50%;
 
@@ -53,7 +62,7 @@
     padding: 8px;
 
     background: #fff;
-    border: 2px solid #666;
+    border: 2px solid #FFD700;
     color: #FFD700;
     text-align: center;
 
