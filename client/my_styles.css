@@ -1,0 +1,16 @@
+.horizontal_align{
+	text-align: center;
+}
+
+.vertical-align{
+	vertical-align: middle;
+	line-height: 170px;
+}
+
+.jumbotron{
+	height: 170px;
+}
+
+.verticalLine {
+    border-right: thick solid #ff0000;
+}
